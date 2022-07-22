@@ -1,13 +1,3 @@
-
-
-//FUNCTIONS
-
-
-
-
-
-//CALLED FUNCTIONS OR EVENT LISTENERS
-
 // GLOBAL VARIABLES
 var alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -19,7 +9,7 @@ var finalPassword = [];
 var passChoices = '';
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// FUNCTIONS
 function writePassword() {
   var password = generatePassword();
 
@@ -32,30 +22,31 @@ function writePassword() {
 
 function generatePassword() {
     var length = window.prompt("Choose a number between 8 and 128 characters for your password.");
-    var wantLowercase = window.confirm("Do you want lower case letters?");
-    var wantUppercase = window.confirm("Do you want upper case letters?");
-    var wantNumbers = window.confirm("Do you want numbers?");
+    var wantLowercase = window.confirm("Do you want to include lowercase letters?");
+    var wantUppercase = window.confirm("Do you want to include uppercase letters?");
+    var wantNumbers = window.confirm("Do you want to include numbers?");
+    var wantSpecialChar = window.confirm("Do you want to include special characters?")
     
 
     if (wantLowercase === true) {
       passChoices = passChoices.concat(alphabetLower);
     } if (wantUppercase === true) {
       passChoices = passChoices.concat(alphabetUpper);
-    } 
-    // add in special characters
-    if (wantNumbers === true) {
+    } if (wantNumbers === true) {
       passChoices = passChoices.concat(numbers);
-    } 
+    } if (wantSpecialChar === true) {
+      passChoices = passChoices.concat(specialCharacters);
+    }
 
     else if (passChoices === '') {
-      window.alert("You must select at least one character type for your password. Please try again.")
+      window.alert("You must select at least one character type for your password. Please try again.");
     }
 
     // split string to prep for randomizer
     passChoices = passChoices.split('');
 
     for (i=0; i<length; i++) {
-      var character = passChoices[Math.floor(Math.random() * passChoices.length)]
+      var character = passChoices[Math.floor(Math.random() * passChoices.length)];
       finalPassword.push(character);
     }
 
