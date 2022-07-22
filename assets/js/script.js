@@ -2,7 +2,7 @@
 var alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
-var specialCharacters = "&^*()%$#@!";
+var specialCharacters = "&^*()%$#@!+,-/:;<>{}[]_|~";
 var finalPassword = [];
 var passChoices = '';
 var generateBtn = document.querySelector("#generate");
@@ -13,7 +13,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 function generatePassword() {
@@ -60,16 +59,10 @@ function generatePassword() {
       return stringPass
     }
 
-    else if (length < 8) {
+    else if (length < 8 || length > 128) {
       window.alert("You must select a password length between 8 and 128 characters. Please try again.")
-    }
-
-    else if (length > 128) {
-      window.alert("Your must select a password length between 8 and 128 characters. Please try again.")
     }
 }
 
-// Run code through button click
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
