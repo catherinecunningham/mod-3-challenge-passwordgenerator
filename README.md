@@ -12,4 +12,4 @@ The site was created using HTML and CSS from provided starter code, and JavaScri
 
 It can be accessed at the following website:  https://catherinecunningham.github.io/mod-3-challenge-passwordgenerator/
 
-<img width="400" text-align="center" alt="password-generator-page" src="https://user-images.githubusercontent.com/107148691/180493970-19677497-bcb0-4901-b549-bf059fa13116.png">
+<img width="400" alt="password-generator-page" src="https://user-images.githubusercontent.com/107148691/180493970-19677497-bcb0-4901-b549-bf059fa13116.png">
