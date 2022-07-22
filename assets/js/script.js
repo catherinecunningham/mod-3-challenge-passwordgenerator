@@ -44,18 +44,21 @@ function generatePassword() {
       // split string to prep for randomizer
       passChoices = passChoices.split('');
 
+      //randomize characters from array
       for (i=0; i<length; i++) {
         var character = passChoices[Math.floor(Math.random() * passChoices.length)];
         finalPassword.push(character);
       }
 
+      // console log password choices array and final password
       console.log(passChoices);
 
       console.log(finalPassword.join(''));
 
+      // join final password into string for output
       var stringPass = finalPassword.join('')
 
-      // ouput of password on screen
+      // output of password on screen
       return stringPass
     }
 
